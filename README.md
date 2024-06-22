@@ -152,253 +152,253 @@ Para ejecutar las pruebas, utiliza el siguiente comando:
 
 Para realizar pruebas manuales, puedes utilizar Postman. Aquí tienes una lista de casos de prueba para diferentes endpoints de la API.
 
-#### Autenticación
+  #### Autenticación
 
-1. **Registro de Usuario**
+  1. **Registro de Usuario**
 
-   - **Endpoint**: `POST /api/auth/register`
-   - **Body**:
-     ```json
-     {
-       "username": "admin",
-       "email": "admin@example.com",
-       "password": "password123",
-       "userType": "Admin"
-     }
-     ```
-   - **Resultado esperado**: 200 OK con mensaje de éxito y detalles del usuario.
+    - **Endpoint**: `POST /api/auth/register`
+    - **Body**:
+      ```json
+      {
+        "username": "admin",
+        "email": "admin@example.com",
+        "password": "password123",
+        "userType": "Admin"
+      }
+      ```
+    - **Resultado esperado**: 200 OK con mensaje de éxito y detalles del usuario.
 
-2. **Inicio de Sesión**
+  2. **Inicio de Sesión**
 
-   - **Endpoint**: `POST /api/auth/login`
-   - **Body**:
-     ```json
-     {
-       "email": "admin@example.com",
-       "password": "password123"
-     }
-     ```
-   - **Resultado esperado**: 200 OK con el token JWT.
+    - **Endpoint**: `POST /api/auth/login`
+    - **Body**:
+      ```json
+      {
+        "email": "admin@example.com",
+        "password": "password123"
+      }
+      ```
+    - **Resultado esperado**: 200 OK con el token JWT.
 
-3. **Verificación de Correo Electrónico**
+  3. **Verificación de Correo Electrónico**
 
-   - **Endpoint**: `GET /api/auth/verify-email/:token`
-   - **Resultado esperado**: 200 OK con mensaje de verificación exitosa.
+    - **Endpoint**: `GET /api/auth/verify-email/:token`
+    - **Resultado esperado**: 200 OK con mensaje de verificación exitosa.
 
-#### Categorías
+  #### Categorías
 
-4. **Crear Categoría**
+  4. **Crear Categoría**
 
-   - **Endpoint**: `POST /api/categories`
-   - **Headers**: Agregar el token JWT en el header `Authorization`.
-   - **Body**:
-     ```json
-     {
-       "name": "Imágenes",
-       "description": "Categoría para imágenes"
-     }
-     ```
-   - **Resultado esperado**: 200 OK con detalles de la categoría creada.
-
-5. **Obtener Categorías**
-
-   - **Endpoint**: `GET /api/categories`
-   - **Headers**: Agregar el token JWT en el header `Authorization`.
-   - **Resultado esperado**: 200 OK con la lista de categorías.
-
-6. **Obtener una Categoría por ID**
-
-   - **Endpoint**: `GET /api/categories/:id`
-   - **Headers**: Agregar el token JWT en el header `Authorization`.
-   - **Resultado esperado**: 200 OK con los detalles de la categoría.
-
-7. **Actualizar una Categoría**
-
-   - **Endpoint**: `PUT /api/categories/:id`
-   - **Headers**: Agregar el token JWT en el header `Authorization`.
-   - **Body**:
-     ```json
-     {
-       "name": "Imágenes Actualizadas",
-       "description": "Categoría para imágenes actualizadas"
-     }
-     ```
-   - **Resultado esperado**: 200 OK con los detalles de la categoría actualizada.
-
-8. **Eliminar una Categoría**
-
-   - **Endpoint**: `DELETE /api/categories/:id`
-   - **Headers**: Agregar el token JWT en el header `Authorization`.
-   - **Resultado esperado**: 200 OK con mensaje de eliminación exitosa.
-
-#### Temáticas
-
-9. **Crear Temática**
-
-   - **Endpoint**: `POST /api/topics`
-   - **Headers**: Agregar el token JWT en el header `Authorization`.
-   - **Body**:
-     ```json
-     {
-       "name": "Naturaleza",
-       "description": "Temática relacionada con la naturaleza",
-       "allowedContentTypes": ["image", "video"]
-     }
-     ```
-   - **Resultado esperado**: 200 OK con detalles de la temática creada.
-
-10. **Obtener Temáticas**
-
-    - **Endpoint**: `GET /api/topics`
-    - **Headers**: Agregar el token JWT en el header `Authorization`.
-    - **Resultado esperado**: 200 OK con la lista de temáticas.
-
-11. **Obtener una Temática por ID**
-
-    - **Endpoint**: `GET /api/topics/:id`
-    - **Headers**: Agregar el token JWT en el header `Authorization`.
-    - **Resultado esperado**: 200 OK con los detalles de la temática.
-
-12. **Actualizar una Temática**
-
-    - **Endpoint**: `PUT /api/topics/:id`
+    - **Endpoint**: `POST /api/categories`
     - **Headers**: Agregar el token JWT en el header `Authorization`.
     - **Body**:
       ```json
       {
-        "name": "Naturaleza Actualizada",
-        "description": "Temática relacionada con la naturaleza actualizada",
-        "allowedContentTypes": ["image", "video", "text"]
+        "name": "Imágenes",
+        "description": "Categoría para imágenes"
       }
       ```
-    - **Resultado esperado**: 200 OK con los detalles de la temática actualizada.
+    - **Resultado esperado**: 200 OK con detalles de la categoría creada.
 
-13. **Eliminar una Temática**
+  5. **Obtener Categorías**
 
-    - **Endpoint**: `DELETE /api/topics/:id`
+    - **Endpoint**: `GET /api/categories`
+    - **Headers**: Agregar el token JWT en el header `Authorization`.
+    - **Resultado esperado**: 200 OK con la lista de categorías.
+
+  6. **Obtener una Categoría por ID**
+
+    - **Endpoint**: `GET /api/categories/:id`
+    - **Headers**: Agregar el token JWT en el header `Authorization`.
+    - **Resultado esperado**: 200 OK con los detalles de la categoría.
+
+  7. **Actualizar una Categoría**
+
+    - **Endpoint**: `PUT /api/categories/:id`
+    - **Headers**: Agregar el token JWT en el header `Authorization`.
+    - **Body**:
+      ```json
+      {
+        "name": "Imágenes Actualizadas",
+        "description": "Categoría para imágenes actualizadas"
+      }
+      ```
+    - **Resultado esperado**: 200 OK con los detalles de la categoría actualizada.
+
+  8. **Eliminar una Categoría**
+
+    - **Endpoint**: `DELETE /api/categories/:id`
     - **Headers**: Agregar el token JWT en el header `Authorization`.
     - **Resultado esperado**: 200 OK con mensaje de eliminación exitosa.
 
+  #### Temáticas
 
-#### Contenidos
+  9. **Crear Temática**
 
-14. **Crear Contenido**
-
-    - **Endpoint**: `POST /api/contents`
+    - **Endpoint**: `POST /api/topics`
     - **Headers**: Agregar el token JWT en el header `Authorization`.
     - **Body**:
       ```json
       {
-        "title": "Foto de la naturaleza",
-        "type": "image",
-        "category": "<category_id>",
-        "topic": "<topic_id>",
-        "creator": "<user_id>",
-        "url": "http://example.com/image.jpg"
+        "name": "Naturaleza",
+        "description": "Temática relacionada con la naturaleza",
+        "allowedContentTypes": ["image", "video"]
       }
       ```
-    - **Resultado esperado**: 200 OK con detalles del contenido creado.
+    - **Resultado esperado**: 200 OK con detalles de la temática creada.
 
-15. **Obtener Contenidos**
+  10. **Obtener Temáticas**
 
-    - **Endpoint**: `GET /api/contents`
-    - **Headers**: Agregar el token JWT en el header `Authorization`.
-    - **Resultado esperado**: 200 OK con la lista de contenidos.
+      - **Endpoint**: `GET /api/topics`
+      - **Headers**: Agregar el token JWT en el header `Authorization`.
+      - **Resultado esperado**: 200 OK con la lista de temáticas.
 
-16. **Obtener un Contenido por ID**
+  11. **Obtener una Temática por ID**
 
-    - **Endpoint**: `GET /api/contents/:id`
-    - **Headers**: Agregar el token JWT en el header `Authorization`.
-    - **Resultado esperado**: 200 OK con los detalles del contenido.
+      - **Endpoint**: `GET /api/topics/:id`
+      - **Headers**: Agregar el token JWT en el header `Authorization`.
+      - **Resultado esperado**: 200 OK con los detalles de la temática.
 
-17. **Actualizar un Contenido**
+  12. **Actualizar una Temática**
 
-    - **Endpoint**: `PUT /api/contents/:id`
-    - **Headers**: Agregar el token JWT en el header `Authorization`.
-    - **Body**:
-      ```json
-      {
-        "title": "Foto de la naturaleza actualizada",
-        "type": "image",
-        "category": "<category_id>",
-        "topic": "<topic_id>",
-        "creator": "<user_id>",
-        "url": "http://example.com/image_updated.jpg"
-      }
-      ```
-    - **Resultado esperado**: 200 OK con los detalles del contenido actualizado.
+      - **Endpoint**: `PUT /api/topics/:id`
+      - **Headers**: Agregar el token JWT en el header `Authorization`.
+      - **Body**:
+        ```json
+        {
+          "name": "Naturaleza Actualizada",
+          "description": "Temática relacionada con la naturaleza actualizada",
+          "allowedContentTypes": ["image", "video", "text"]
+        }
+        ```
+      - **Resultado esperado**: 200 OK con los detalles de la temática actualizada.
 
-18. **Eliminar un Contenido**
+  13. **Eliminar una Temática**
 
-    - **Endpoint**: `DELETE /api/contents/:id`
-    - **Headers**: Agregar el token JWT en el header `Authorization`.
-    - **Resultado esperado**: 200 OK con mensaje de eliminación exitosa.
+      - **Endpoint**: `DELETE /api/topics/:id`
+      - **Headers**: Agregar el token JWT en el header `Authorization`.
+      - **Resultado esperado**: 200 OK con mensaje de eliminación exitosa.
 
-#### Tipos de Reacción
 
-19. **Crear Tipo de Reacción**
+  #### Contenidos
 
-    - **Endpoint**: `POST /api/reaction-types`
-    - **Headers**: Agregar el token JWT en el header `Authorization`.
-    - **Body**:
-      ```json
-      {
-        "name": "Me gusta",
-        "icon": "👍"
-      }
-      ```
-    - **Resultado esperado**: 200 OK con detalles del tipo de reacción creado.
+  14. **Crear Contenido**
 
-20. **Obtener Tipos de Reacción**
+      - **Endpoint**: `POST /api/contents`
+      - **Headers**: Agregar el token JWT en el header `Authorization`.
+      - **Body**:
+        ```json
+        {
+          "title": "Foto de la naturaleza",
+          "type": "image",
+          "category": "<category_id>",
+          "topic": "<topic_id>",
+          "creator": "<user_id>",
+          "url": "http://example.com/image.jpg"
+        }
+        ```
+      - **Resultado esperado**: 200 OK con detalles del contenido creado.
 
-    - **Endpoint**: `GET /api/reaction-types`
-    - **Headers**: Agregar el token JWT en el header `Authorization`.
-    - **Resultado esperado**: 200 OK con la lista de tipos de reacciones.
+  15. **Obtener Contenidos**
 
-21. **Obtener un Tipo de Reacción por ID**
+      - **Endpoint**: `GET /api/contents`
+      - **Headers**: Agregar el token JWT en el header `Authorization`.
+      - **Resultado esperado**: 200 OK con la lista de contenidos.
 
-    - **Endpoint**: `GET /api/reaction-types/:id`
-    - **Headers**: Agregar el token JWT en el header `Authorization`.
-    - **Resultado esperado**: 200 OK con los detalles del tipo de reacción.
+  16. **Obtener un Contenido por ID**
 
-22. **Actualizar un Tipo de Reacción**
+      - **Endpoint**: `GET /api/contents/:id`
+      - **Headers**: Agregar el token JWT en el header `Authorization`.
+      - **Resultado esperado**: 200 OK con los detalles del contenido.
 
-    - **Endpoint**: `PUT /api/reaction-types/:id`
-    - **Headers**: Agregar el token JWT en el header `Authorization`.
-    - **Body**:
-      ```json
-      {
-        "name": "Me gusta Actualizado",
-        "icon": "👍"
-      }
-      ```
-    - **Resultado esperado**: 200 OK con los detalles del tipo de reacción actualizado.
+  17. **Actualizar un Contenido**
 
-23. **Eliminar un Tipo de Reacción**
+      - **Endpoint**: `PUT /api/contents/:id`
+      - **Headers**: Agregar el token JWT en el header `Authorization`.
+      - **Body**:
+        ```json
+        {
+          "title": "Foto de la naturaleza actualizada",
+          "type": "image",
+          "category": "<category_id>",
+          "topic": "<topic_id>",
+          "creator": "<user_id>",
+          "url": "http://example.com/image_updated.jpg"
+        }
+        ```
+      - **Resultado esperado**: 200 OK con los detalles del contenido actualizado.
 
-    - **Endpoint**: `DELETE /api/reaction-types/:id`
-    - **Headers**: Agregar el token JWT en el header `Authorization`.
-    - **Resultado esperado**: 200 OK con mensaje de eliminación exitosa.
+  18. **Eliminar un Contenido**
 
-#### Reacciones
+      - **Endpoint**: `DELETE /api/contents/:id`
+      - **Headers**: Agregar el token JWT en el header `Authorization`.
+      - **Resultado esperado**: 200 OK con mensaje de eliminación exitosa.
 
-24. **Agregar Reacción a Contenido**
+  #### Tipos de Reacción
 
-    - **Endpoint**: `POST /api/contents/:id/reactions`
-    - **Headers**: Agregar el token JWT en el header `Authorization`.
-    - **Body**:
-      ```json
-      {
-        "reactionTypeId": "<reaction_type_id>"
-      }
-      ```
-    - **Resultado esperado**: 200 OK con mensaje de éxito.
+  19. **Crear Tipo de Reacción**
 
-25. **Eliminar Reacción de Contenido**
+      - **Endpoint**: `POST /api/reaction-types`
+      - **Headers**: Agregar el token JWT en el header `Authorization`.
+      - **Body**:
+        ```json
+        {
+          "name": "Me gusta",
+          "icon": "👍"
+        }
+        ```
+      - **Resultado esperado**: 200 OK con detalles del tipo de reacción creado.
 
-    - **Endpoint**: `DELETE /api/contents/:id/reactions/:reactionId`
-    - **Headers**: Agregar el token JWT en el header `Authorization`.
-    - **Resultado esperado**: 200 OK con mensaje de éxito.
+  20. **Obtener Tipos de Reacción**
+
+      - **Endpoint**: `GET /api/reaction-types`
+      - **Headers**: Agregar el token JWT en el header `Authorization`.
+      - **Resultado esperado**: 200 OK con la lista de tipos de reacciones.
+
+  21. **Obtener un Tipo de Reacción por ID**
+
+      - **Endpoint**: `GET /api/reaction-types/:id`
+      - **Headers**: Agregar el token JWT en el header `Authorization`.
+      - **Resultado esperado**: 200 OK con los detalles del tipo de reacción.
+
+  22. **Actualizar un Tipo de Reacción**
+
+      - **Endpoint**: `PUT /api/reaction-types/:id`
+      - **Headers**: Agregar el token JWT en el header `Authorization`.
+      - **Body**:
+        ```json
+        {
+          "name": "Me gusta Actualizado",
+          "icon": "👍"
+        }
+        ```
+      - **Resultado esperado**: 200 OK con los detalles del tipo de reacción actualizado.
+
+  23. **Eliminar un Tipo de Reacción**
+
+      - **Endpoint**: `DELETE /api/reaction-types/:id`
+      - **Headers**: Agregar el token JWT en el header `Authorization`.
+      - **Resultado esperado**: 200 OK con mensaje de eliminación exitosa.
+
+  #### Reacciones
+
+  24. **Agregar Reacción a Contenido**
+
+      - **Endpoint**: `POST /api/contents/:id/reactions`
+      - **Headers**: Agregar el token JWT en el header `Authorization`.
+      - **Body**:
+        ```json
+        {
+          "reactionTypeId": "<reaction_type_id>"
+        }
+        ```
+      - **Resultado esperado**: 200 OK con mensaje de éxito.
+
+  25. **Eliminar Reacción de Contenido**
+
+      - **Endpoint**: `DELETE /api/contents/:id/reactions/:reactionId`
+      - **Headers**: Agregar el token JWT en el header `Authorization`.
+      - **Resultado esperado**: 200 OK con mensaje de éxito.
 
 10. **Contribuciones**
 
