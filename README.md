@@ -400,6 +400,9 @@ Para realizar pruebas manuales, puedes utilizar Postman. Aquí tienes una lista 
       - **Headers**: Agregar el token JWT en el header `Authorization`.
       - **Resultado esperado**: 200 OK con mensaje de éxito.
 
+
+
+
 10. **Contribuciones**
 
 Las contribuciones son bienvenidas. Por favor, sigue los siguientes pasos para contribuir:
